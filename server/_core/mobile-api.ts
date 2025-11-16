@@ -1,5 +1,5 @@
 import { Express } from "express";
-import { getUserById } from "../db";
+import { getAppUserById } from "../db";
 
 /**
  * Registra todos os endpoints necessários para o app mobile
@@ -25,7 +25,7 @@ export function registerMobileApiRoutes(app: Express) {
       // TODO: Decode token to get userId
       // For now, return mock data
       const userId = 27; // Mock user ID
-      const user = await getUserById(userId);
+      const user = await getAppUserById(userId);
 
       if (!user) {
         return res.status(404).json({ success: false, error: "User not found" });
@@ -57,7 +57,7 @@ export function registerMobileApiRoutes(app: Express) {
       if (!token) return;
 
       const userId = 27; // Mock user ID
-      const user = await getUserById(userId);
+      const user = await getAppUserById(userId);
 
       if (!user) {
         return res.status(404).json({ success: false, error: "User not found" });
@@ -232,7 +232,7 @@ export function registerMobileApiRoutes(app: Express) {
       if (!token) return;
 
       const userId = 27; // Mock user ID
-      const user = await getUserById(userId);
+      const user = await getAppUserById(userId);
 
       res.json({
         success: true,
