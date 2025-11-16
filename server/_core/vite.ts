@@ -5,6 +5,7 @@ import { nanoid } from "nanoid";
 import path from "path";
 import { fileURLToPath } from "url";
 
+// Fix for Node.js 18 compatibility - __dirname replacement
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 import { createServer as createViteServer } from "vite";
 import viteConfig from "../../vite.config";
