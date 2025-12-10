@@ -11,6 +11,7 @@ import UserDetails from "./pages/UserDetails";
 import Notifications from "./pages/Notifications";
 import Ranking from "./pages/Ranking";
 import Withdrawals from "./pages/Withdrawals";
+import Settings from "./pages/Settings";
 
 function Router() {
   return (
@@ -43,6 +44,11 @@ function Router() {
       <Route path="/withdrawals" component={() => (
         <DashboardLayout>
           <Withdrawals />
+        </DashboardLayout>
+      )} />
+      <Route path="/settings" component={() => (
+        <DashboardLayout>
+          <Settings />
         </DashboardLayout>
       )} />
       <Route path="/404" component={NotFound} />
